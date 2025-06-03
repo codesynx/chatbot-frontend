@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eye Diagnosis Bot</title>
+    <link rel="stylesheet" href="../src/assets/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Roboto:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,400;0,500;0,600;0,800;1,900&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+</head>
+
+<body>
+<!-- Навигационная панель -->
+<header>
+    <div class="logo">
+        <img src="/static/img/eye icon.png" alt="Eye Icon"> Eye Bot
+    </div>
+    <button class="burger-menu" id="burger-menu">
+        <i class="fa-solid fa-bars"></i>
+    </button>
+    <nav id="nav-menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#uploud-img">Img Analyzing</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="/login" class="login">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- Контент: Home -->
+<section id="home">
+    <video autoplay muted loop id="homeVideo">
+        <source src="/video%20for%20eye%20bot.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+    <div class="home-content">
+        <h1>Welcome to Eye Diagnosis Bot</h1>
+        <p>Get quick and reliable diagnosis for eye diseases using AI technology.</p>
+        <button id="checkButton">Let's Check</button>
+    </div>
+</section>
+
+<!-- Контент: Icons -->
+<section class="icon-content">
+    <div class="icons">
+        <div class="icon" id="photo-icon">
+            <img src="/static/img/eye%20photo.png" alt="One photo" onclick="showInfo('photo-icon')">
+            <p class="icon-info">One photo</p>
+            <div class="hover-info">AI will analyze your photo for possible eye diseases.</div>
+        </div>
+
+        <div class="icon" id="second-icon">
+            <img src="/static/img/eye%20scan.png" alt="One second" onclick="showInfo('second-icon')">
+            <p class="icon-info">One second</p>
+            <div class="hover-info">Our system will process your results in under a second.</div>
+        </div>
+
+        <div class="icon" id="screening-icon">
+            <img src="/static/img/eye%20fundus.png" alt="One screening" onclick="showInfo('screening-icon')">
+            <p class="icon-info">One screening</p>
+            <div class="hover-info">This screening includes retina health checks and risk assessments.</div>
+        </div>
+    </div>
+</section>
+
+<!-- Модальное окно (добавьте в конец body) -->
+<div id="info-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="hideInfo()">&times;</span>
+        <p id="info-text"></p>
+    </div>
+    <div class="modal-backdrop" onclick="hideInfo()"></div>
+</div>
+
+<!-- Pop-up Info Modal -->
+<div id="info-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="hideInfo()">&times;</span>
+        <p id="info-text"></p>
+    </div>
+</div>
+
+<!-- Контент: Upload IMG -->
+<section id="uploud-img">
+    <div class="chat-container">
+        <h2 style="text-align: center; font-size: 45px;">Chat Eye</h2>
+        <div class="chat-box" id="chat-box">
+            <div class="bot-message message">👋 Welcome! Upload an eye fundus photo and we will analyze to identify possible eye diseases. 👁️</div>
+        </div>
+        <div class="chat-input">
+            <input type="file" id="fileInput" accept="image/*">
+            <button id="sendButton">📤 Send</button>
+            <button onclick="clearChat()">🗑 Clear chat</button>
+        </div>
+    </div>
+</section>
+
+<!-- Контент: About -->
+<section id="about">
+    <div class="container">
+        <div class="image">
+            <img src="/static/img/undus eye scan.webp" alt="About Us Image">
+        </div>
+        <div class="text">
+            <h2>About Us</h2>
+            <p>
+                We have developed an artificial intelligence chatbot that analyzes ocular fundus images to detect and classify various eye diseases, including glaucoma and cataract, and so on. Our system is designed to improve early diagnosis, enhance patient care and support telemedicine by providing fast and accurate analysis.
+            </p>
+            <a href="/learn.html" class="btn">Learn More</a>
+        </div>
+    </div>
+</section>
+
+<!-- Контент: Slider -->
+<div class="slider-container">
+    <button class="prev hidden">
+        <img src="/static/img/icons8-back-26.png" alt="Previous" class="arrow-icon">
+    </button>
+    <div class="slider-wrapper">
+        <div class="slider">
+            <div class="card">
+                <a href="/templates/Normal.html" class="card-link" target="_blank">
+                    <img src="/static/img/Normal.png" alt="Normal">
+                    <span class="tag tag-orange">Normal (N)
+                    </span>
+                    <h4>Normal ocular fundus with no evidence of pathology or abnormality.</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="/templates/Diabetes .html" class="card-link" target="_blank">
+                    <img src="/static/img/Diabetes.png" alt="Diabetes">
+                    <span class="tag tag-green">Diabetes (D)</span>
+                    <h4>Damage to retinal blood vessels caused by prolonged high blood sugar levels.</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="/templates/Glaucoma .html" class="card-link" target="_blank">
+                    <img src="/static/img/Glaucoma.png" alt="Glaucoma">
+                    <span class="tag tag-yellow">Glaucoma (G)</span>
+                    <h4>A disease characterized by increased intraocular pressure and damage to the optic nerve, which can lead to vision loss.
+                    </h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="/templates/Cataract .html" class="card-link" target="_blank">
+                    <img src="/static/img/Cataract.png" alt="Cataract">
+                    <span class="tag tag-blue">Cataract (C)</span>
+                    <h4>A clouding of the lens of the eye that causes vision impairment and is often associated with age-related changes.</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="/templates/AMD.html" class="card-link" target="_blank">
+                    <img src="/static/img/Age-Related Macular Degeneration.png" alt="Age-Related Macular Degeneration">
+                    <span class="tag tag-red">Age-Related Macular Degeneration (A)</span>
+                    <h4>Age-related macular degeneration leading to loss of central vision and retinal damage.</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="/templates/Hypertension .html" class="card-link" target="_blank">
+                    <img src="/static/img/Hypertension.png" alt="Hypertension">
+                    <span class="tag tag-purple">Hypertension (H)</span>
+                    <h4>Hypertensive retinopathy is damage to the blood vessels in the retina due to high blood pressure.</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="/templates/Pathological .html" class="card-link" target="_blank">
+                    <img src="/static/img/Pathological Myopia.png" alt="Pathological Myopia">
+                    <span class="tag tag-cyan">Pathological Myopia (M)
+                    </span>
+                    <h4>A severe form of myopia associated with changes in the eye fundus and an increased risk of retinal detachment.</h4>
+                </a>
+            </div>
+
+            <div class="card">
+                <a href="/templates/Other.html" class="card-link" target="_blank">                    <img src="/static/img/Other DiseasesAbnormalities.png" alt="Other Diseases/Abnormalities">
+                    <span class="tag tag-gray">Other Diseases/Abnormalities (O)
+                    </span>
+                    <h4>Other diseases or abnormalities that do not fall into the major categories, including rare pathologies.</h4>
+                </a>
+            </div>
+        </div>
+    </div>
+    <button class="next hidden">
+        <img src="/static/img/icons8-chevron-right-26.png" alt="Next" class="arrow-icon">
+    </button>
+</div>
+
+<div class="dots">
+    <span class="dot active" onclick="setSlide(0)"></span>
+    <span class="dot" onclick="setSlide(1)"></span>
+    <span class="dot" onclick="setSlide(2)"></span>
+    <span class="dot" onclick="setSlide(3)"></span>
+    <span class="dot" onclick="setSlide(4)"></span>
+</div>
+
+
+<!-- Контент: FQA -->
+<div class="faq-container">
+    <h1 class="faq-heading">Frequently Asked Questions</h1>
+    
+    <div class="faq-item">
+        <div class="faq-question">What does your chatbot do?</div>
+        <div class="faq-answer">Our chatbot assists users in the preliminary diagnosis of eye diseases by analyzing fundus (retina) images using artificial intelligence. It does not replace a professional doctor but provides early insights and recommendations.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">What eye diseases can the bot detect?</div>
+        <div class="faq-answer">Our AI is trained to recognize the following conditions: 
+            <ul>
+                <li>Normal (N)</li>
+                <li>Glaucoma (G)</li>
+                <li>Cataract (C)</li>
+                <li>Age-related Macular Degeneration (A)</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">How do I upload a fundus image?</div>
+        <div class="faq-answer">Users can upload an image of the eye directly from their device (smartphone, tablet, or computer) through the upload form on our website. The system will then analyze the image.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Can I trust the diagnostic results?</div>
+        <div class="faq-answer">Our system is based on the verified ODIR medical dataset and uses convolutional neural networks (CNNs) for analysis. However, the results are preliminary, and only a certified ophthalmologist can make a final diagnosis.</div>
+    </div>
+
+    <div class="faq-item">
+        <div class="faq-question">Is the service free?</div>
+        <div class="faq-answer">The basic diagnostic service is free. In the future, premium features may be added, such as:
+            <ul>
+                <li>Detailed PDF reports</li>
+                <li>Online consultations with doctors</li>
+                <li>Analysis history storage</li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+<!-- Контент: Contact -->
+<footer id="contact">
+    <div class="container-contact">
+        <main class="row">
+            <section class="col left">
+                <div class="contactTitle">
+                    <h2>Contact Us</h2>
+                    <p>Contact us for information about our AI chatbot for diagnosing eye diseases.
+                    </p>
+                </div>
+                <div class="contactInfo">
+                    <div class="iconGroup">
+                        <div class="icon"><i class="fa-solid fa-phone"></i></div>
+                        <div class="details"><span>Phone</span><span>+7 777 77 77</span></div>
+                    </div>
+                    <div class="iconGroup">
+                        <div class="icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div class="details"><span>Email</span><span>chatboteye@gmail.com</span></div>
+                    </div>
+                    <div class="iconGroup">
+                        <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div class="details"><span>Location</span><span>55 Mangilik El Avenue, Astana, Kazakhstan</span></div>
+                    </div>
+                </div>
+                <div class="socialMedia">
+                    <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                </div>
+            </section>
+            <section class="col right">
+                <form id="contact-form" class="messageForm">
+                    <div class="inputGroup halfWidth">
+                        <input type="text" id="name" required>
+                        <label>Your Name</label>
+                    </div>
+                    <div class="inputGroup halfWidth">
+                        <input type="email" id="email" required>
+                        <label>Email</label>
+                    </div>
+                    <div class="inputGroup fullWidth">
+                        <input type="text" id="subject" required>
+                        <label>Subject</label>
+                    </div>
+                    <div class="inputGroup fullWidth">
+                        <textarea id="message" required></textarea>
+                        <label>Say Something</label>
+                    </div>
+                    <div class="inputGroup fullWidth">
+                        <button type="submit">Send Message</button>
+                    </div>
+                </form>
+                <div id="status-message"></div>
+                <!-- Уведомления будут автоматически добавляться в JavaScript -->
+            </section>
+        </main>
+    </div>
+</footer>
+
+<script src="/static/script.js" defer></script>
+</body>
+
+</html>

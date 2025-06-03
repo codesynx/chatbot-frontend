@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundus Analysis - Normal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f1f4ff 100%);
+            color: #2d3436;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.8rem;
+            position: relative;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #3498db;
+            margin: 40px 0 25px;
+            font-size: 2rem;
+            padding-left: 20px;
+            border-left: 4px solid #3498db;
+        }
+
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .feature-block {
+            background: linear-gradient(145deg, #ffffff, #f8faff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 15px;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+            position: relative;
+        }
+
+        .feature-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.15);
+        }
+
+        .feature-block h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-block h3 i {
+            color: #3498db;
+            font-size: 1.6rem;
+        }
+
+        .recommendations {
+            background: linear-gradient(145deg, #e8f5e9, #d4ede6);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            border: 2px solid #4CAF50;
+        }
+
+        .recommendations h3 {
+            color: #2e7d32;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 30px;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        ul li:before {
+            content: '✓';
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="fade-in">Age-related Macular Degeneration (A) </h1>
+        
+        <p class="fade-in">Age-related macular degeneration (AMD) is a retinal disease that affects the macula (the central part of the retina responsible for sharp central vision). It is one of the leading causes of vision loss in people over 50 years old.</p>
+    
+        <h2 class="fade-in">Types of AMD</h2>
+    
+        <div class="feature-block fade-in amd">
+            <h3><i class="fas fa-circle"></i> Early Stage (Drusen)</h3>
+            <p>- YDrusen are yellowish deposits under the retina composed of proteins and lipids.<br>
+            - In fundus analysis, they appear as small or large bright spots in the macular area.<br>
+            - At this stage, a person may not experience symptoms or may notice slight contrast reduction.
+        </p>
+        </div>
+    
+        <div class="feature-block fade-in amd">
+            <h3><i class="fas fa-sun"></i> Dry AMD</h3>
+            <p>- Characterized by progressive atrophy of retinal cells.<br>
+            - Analysis reveals thinning of the retinal pigment epithelium (RPE) layer in the macular zone.<br>
+            - It progresses slowly but can lead to significant central vision loss.
+        </p>
+        </div>
+    
+        <div class="feature-block fade-in amd">
+            <h3><i class="fas fa-tint"></i> Wet AMD</h3>
+            <p>- A more aggressive form in which new abnormal blood vessels (neovascularization) develop in the macula.
+                <br>
+            - These vessels may leak and bleed, causing retinal swelling and rapid vision deterioration.
+            <br>
+            - Fundus analysis shows dark spots (hemorrhages) and swelling in the macular area.
+        </p>
+        </div>
+    
+        <h2 class="fade-in">Analysis Results</h2>
+        <ul class="fade-in">
+            <li>People <span class="highlight">over 50</span> are at higher risk of developing AMD. </li>
+            <li>The analysis identifies <span class="highlight">drusen, retinal atrophy, neovascularization,</span> and hemorrhages in the macular region.</li>
+            <li>The wet form is less common but progresses much faster than the dry form, which may develop over several years.
+            </li>
+        </ul>
+    
+        <h2 class="fade-in">What Does AMD Result Mean?</h2>
+        <p class="fade-in">If your analysis result indicates AMD, it means that age-related changes are occurring in the central retinal zone, potentially leading to vision impairment. Early detection is crucial, as the wet form requires immediate treatment.</p>
+    
+        <div class="recommendations amd fade-in">
+            <h3><i class="fas fa-shield-alt"></i> Recommendations:</h3>
+            <ul>
+                <li>If diagnosed with AMD, regular ophthalmologist check-ups are essential.</li>
+                <li>Eat foods rich in antioxidants, lutein, and omega-3 fatty acids (fish, spinach, eggs, nuts) to slow AMD progression.</li>
+                <li>Wet AMD may require anti-VEGF injections to suppress abnormal blood vessel growth.</li>
+                <li>Wear UV-protective glasses, as UV rays contribute to retinal degeneration.</li>
+                <li>Control blood pressure and cholesterol levels, as vascular disorders can worsen AMD.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <style>
+        /* Специфические стили для AMD */
+        .amd {
+            border-color: #e67e22 !important;
+        }
+    
+        .amd h3 {
+            color: #d35400 !important;
+        }
+    
+        .amd li:before {
+            color: #e67e22 !important;
+        }
+    
+        .feature-block.amd {
+            background: linear-gradient(145deg, #fff4e6, #ffeedd);
+            border-left: 4px solid #e67e22;
+        }
+    
+        .feature-block.amd:hover {
+            box-shadow: 0 15px 30px rgba(230, 126, 34, 0.15);
+        }
+    
+        .recommendations.amd {
+            background: linear-gradient(145deg, #ffeed8, #ffe7cc);
+            border-color: #e67e22;
+        }
+    
+        .recommendations.amd h3 {
+            color: #d35400 !important;
+        }
+    
+        .highlight {
+            background-image: linear-gradient(120deg, #f8c471 0%, #f8c471 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 90%;
+        }
+    
+        .fa-shield-alt {
+            color: #e67e22;
+        }
+    </style>
+    
+    <script>
+        // Анимация при скролле (остается без изменений)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+    
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>

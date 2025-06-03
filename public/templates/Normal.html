@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundus Analysis - Normal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f1f4ff 100%);
+            color: #2d3436;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.8rem;
+            position: relative;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #3498db;
+            margin: 40px 0 25px;
+            font-size: 2rem;
+            padding-left: 20px;
+            border-left: 4px solid #3498db;
+        }
+
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .feature-block {
+            background: linear-gradient(145deg, #ffffff, #f8faff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 15px;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+            position: relative;
+        }
+
+        .feature-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.15);
+        }
+
+        .feature-block h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-block h3 i {
+            color: #3498db;
+            font-size: 1.6rem;
+        }
+
+        .recommendations {
+            background: linear-gradient(145deg, #e8f5e9, #d4ede6);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            border: 2px solid #4CAF50;
+        }
+
+        .recommendations h3 {
+            color: #2e7d32;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 30px;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        ul li:before {
+            content: '✓';
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="fade-in">Normal (N)</h1>
+        
+        <p class="fade-in">Our analysis of fundus images labeled as "Normal" (N) indicates that patients with this classification do not exhibit any pathological changes in the retina, optic nerve, or ocular blood vessels.</p>
+    
+        <h2 class="fade-in">Key Characteristics of a Normal Fundus</h2>
+    
+        <div class="feature-block fade-in">
+            <h3><i class="fas fa-dot-circle"></i> Clear Optic Disc Boundaries</h3>
+            <p>- The optic nerve has smooth, well-defined edges without signs of swelling or atrophy.<br>
+            - The disc color is pale pink, indicating healthy blood supply.</p>
+        </div>
+    
+        <div class="feature-block fade-in">
+            <h3><i class="fas fa-project-diagram"></i> Even Distribution of Retinal Blood Vessels</h3>
+            <p>- Arteries and veins are naturally arranged, without pathological dilation, narrowing, or tortuosity.<br>
+            - There are no signs of microaneurysms, hemorrhages, or neovascularization.</p>
+        </div>
+    
+        <div class="feature-block fade-in">
+            <h3><i class="fas fa-bullseye"></i> Uniform Macular Structure (Central Retinal Zone)</h3>
+            <p>- The fovea (central pit) is clearly defined, with no signs of swelling or dystrophy.<br>
+            - No changes indicative of macular degeneration are present.</p>
+        </div>
+    
+        <div class="feature-block fade-in">
+            <h3><i class="fas fa-palette"></i> Consistent Retinal Color and Structure</h3>
+            <p>- The retina has a uniform color, without dark or light spots that could indicate pathological processes.<br>
+            - The pigment epithelium does not contain areas of hypo- or hyperpigmentation.</p>
+        </div>
+    
+        <h2 class="fade-in">Results of Our Analysis</h2>
+        <ul class="fade-in">
+            <li>The average age of patients with a normal fundus ranges from <span class="highlight">18 to 50 years</span></li>
+            <li>Most normal images were captured using <span class="highlight">Canon, Zeiss and Kowa</span> cameras</li>
+            <li>Normal fundus images maintain stable lighting conditions</li>
+        </ul>
+    
+        <h2 class="fade-in">What Does a "Normal" Result Mean?</h2>
+        <p class="fade-in">If the system classifies your fundus image as "Normal," it means that no obvious signs of disease have been detected. However, it is important to remember that our AI service serves as an assistive tool, and the final diagnosis should always be made by an ophthalmologist.</p>
+    
+        <div class="recommendations fade-in">
+            <h3><i class="fas fa-hand-holding-medical"></i> Recommendations:</h3>
+            <ul>
+                <li>Regularly visit an ophthalmologist</li>
+                <li>Follow proper eye care practices</li>
+                <li>Consult a specialist if symptoms appear</li>
+            </ul>
+        </div>
+    </div>
+    
+    <script>
+        // Анимация при скролле (остается без изменений)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+    
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>

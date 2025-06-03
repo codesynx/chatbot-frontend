@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundus Analysis - Normal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f1f4ff 100%);
+            color: #2d3436;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.8rem;
+            position: relative;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #3498db;
+            margin: 40px 0 25px;
+            font-size: 2rem;
+            padding-left: 20px;
+            border-left: 4px solid #3498db;
+        }
+
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .feature-block {
+            background: linear-gradient(145deg, #ffffff, #f8faff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 15px;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+            position: relative;
+        }
+
+        .feature-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.15);
+        }
+
+        .feature-block h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-block h3 i {
+            color: #3498db;
+            font-size: 1.6rem;
+        }
+
+        .recommendations {
+            background: linear-gradient(145deg, #e8f5e9, #d4ede6);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            border: 2px solid #4CAF50;
+        }
+
+        .recommendations h3 {
+            color: #2e7d32;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 30px;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        ul li:before {
+            content: '✓';
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="fade-in">Glaucoma (G)</h1>
+        
+        <p class="fade-in">Glaucoma is a chronic disease characterized by increased intraocular pressure (IOP), leading to optic nerve damage and gradual vision loss. Without timely treatment, glaucoma can result in irreversible blindness.</p>
+    
+        <h2 class="fade-in">Key Signs of Glaucoma</h2>
+    
+        <div class="feature-block fade-in glaucoma">
+            <h3><i class="fas fa-compress-arrows-alt"></i> Optic Disc Changes</h3>
+            <p>- Enlargement of the optic disc excavation (cupping) – the central part of the optic disc becomes wider, indicating nerve fiber damage.<br>
+            - The optic disc borders may appear blurred or atrophied.</p>
+        </div>
+    
+        <div class="feature-block fade-in glaucoma">
+            <h3><i class="fas fa-wave-square"></i> Retinal Nerve Fiber Layer Thinning</h3>
+            <p>- Thinning of nerve fiber layer in upper/lower zones<br>
+            - Visible structural changes in retinal layers</p>
+        </div>
+    
+        <div class="feature-block fade-in glaucoma">
+            <h3><i class="fas fa-water"></i> Vascular Changes</h3>
+            <p>- Blood vessels around the optic nerve may change direction, narrow, or become less distinct.
+                <br>
+            - The optic disc may appear paler due to tissue atrophy.
+        </p>
+        </div>
+    
+        <div class="feature-block fade-in glaucoma">
+            <h3><i class="fas fa-binoculars"></i> Visual Field Defects</h3>
+            <p>- In later stages, patients experience tunnel vision (loss of peripheral vision) and dark spots in their visual field.<br>
+            - Fundus image analysis often reveals changes in vascular patterns and optic nerve structure, characteristic of nerve cell loss.</p>
+        </div>
+    
+        <h2 class="fade-in">Analysis Results</h2>
+        <ul class="fade-in">
+            <li>Glaucoma most commonly develops in individuals <span class="highlight">over 40 years</span> old but can also occur at a younger age. </li>
+            <li>Fundus images of glaucoma cases reveal characteristic optic disc changes, <span class="highlight">RNFL thinning</span>, and vascular abnormalities. </li>
+            <li>Patients with glaucoma often have increased intraocular pressure, but some cases occur with normal IOP (normal-tension glaucoma).</li>
+        </ul>
+    
+        <h2 class="fade-in">What Does a "Glaucoma" Result Mean?</h2>
+        <p class="fade-in">If your analysis result indicates glaucoma, it may suggest optic nerve damage associated with increased intraocular pressure or impaired blood supply. This is a serious condition that often progresses without symptoms until advanced stages, making early diagnosis crucial.</p>
+    
+        <div class="recommendations glaucoma fade-in">
+            <h3><i class="fas fa-low-vision"></i> Recommendations:</h3>
+            <ul>
+                <li>Regularly monitor intraocular pressure and undergo ophthalmologic examinations.</li>
+                <li>If glaucomatous changes are detected, seek medical attention immediately—early treatment can help preserve vision.</li>
+                <li>If glaucoma is confirmed, your doctor may prescribe eye drops, laser treatment, or surgery to reduce intraocular pressure.</li>
+                <li>People over 40, especially those with a family history of glaucoma, should have preventive eye exams annually.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <style>
+        /* Специфические стили для глаукомы */
+        .glaucoma {
+            border-color: #6c5ce7 !important;
+        }
+    
+        .glaucoma h3 {
+            color: #4b4bcc !important;
+        }
+    
+        .glaucoma li:before {
+            color: #6c5ce7 !important;
+        }
+    
+        .feature-block.glaucoma {
+            background: linear-gradient(145deg, #f3f0ff, #ece9ff);
+            border-left: 4px solid #6c5ce7;
+        }
+    
+        .feature-block.glaucoma:hover {
+            box-shadow: 0 15px 30px rgba(108, 92, 231, 0.15);
+        }
+    
+        .recommendations.glaucoma {
+            background: linear-gradient(145deg, #edebff, #e6e4ff);
+            border-color: #6c5ce7;
+        }
+    
+        .recommendations.glaucoma h3 {
+            color: #4b4bcc !important;
+        }
+    
+        .highlight {
+            background-image: linear-gradient(120deg, #a8a4ff 0%, #a8a4ff 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 90%;
+        }
+    </style>
+    
+    <script>
+        // Анимация при скролле (остается без изменений)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+    
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>

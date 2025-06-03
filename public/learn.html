@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyeCare AI - About Us</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: #f8fbfe;
+            line-height: 1.7;
+            color: #2d3436;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        h1, h2 {
+            color: #1a365d;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 3rem;
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            animation: slideIn 1s ease-out;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: #4fd1c5;
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-top: 3rem;
+            padding-bottom: 1rem;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: #4fd1c5;
+        }
+
+        .section {
+            background: white;
+            padding: 3rem;
+            margin: 3rem 0;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transform: translateY(30px);
+            opacity: 0;
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .section.visible {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .team-members {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .member {
+            background: #f8fafc;
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .member:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2rem;
+            border-radius: 12px;
+            border-left: 4px solid #4fd1c5;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .disease-list {
+            columns: 2;
+            list-style-type: none;
+            margin: 2rem 0;
+        }
+
+        .disease-list li {
+            padding: 1rem 0;
+            position: relative;
+            padding-left: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .disease-list li::before {
+            content: "▹";
+            color: #4fd1c5;
+            position: absolute;
+            left: 0;
+            font-size: 1.2rem;
+        }
+
+        .process-steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+            background: #f8fafc;
+            border-radius: 12px;
+            position: relative;
+            transition: transform 0.3s;
+        }
+
+        .step:hover {
+            transform: scale(1.05);
+        }
+
+        .step-number {
+            width: 50px;
+            height: 50px;
+            background: #4fd1c5;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin: 0 auto 1rem;
+        }
+
+        .security-item {
+            padding: 1.2rem 0;
+            position: relative;
+        }
+        
+        .security-title {
+            color: #1a365d;
+            font-weight: 600;
+            display: block;
+            margin-bottom: 0.4rem;
+        }
+        
+        .security-desc {
+            color: #4a5568;
+            font-size: 0.95rem;
+            line-height: 1.5;
+            margin-left: 1.8rem;
+        }
+        
+        .security-badge {
+            background: #f0faff;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+            border: 2px solid #c3dafe;
+            text-align: center;
+        }
+        
+        .security-badge h3 {
+            color: #1a365d;
+            margin-bottom: 0.5rem;
+        }
+        
+        .security-badge p {
+            color: #2d3748;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-button {
+            background: #1a365d;
+            color: white;
+            padding: 10px;
+            border-radius: 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 1.5rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .cta-button:hover {
+            background: #4fd1c5;
+            color: #1a365d;
+            border-color: #1a365d;
+            transform: translateY(-3px);
+        }
+
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .section {
+                padding: 2rem 1.5rem;
+            }
+
+            .disease-list {
+                columns: 1;
+            }
+
+            .process-steps {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>About Us</h1>
+
+        <!-- About Us Section -->
+        <div class="section">
+            <h2>About Us</h2>
+            <p>Welcome to our innovative platform dedicated to enhancing eye health through cutting-edge technology. Our mission is to improve early detection and diagnosis of eye diseases by combining advanced artificial intelligence with user-friendly chatbot interaction. We aim to make eye care more accessible, especially in remote areas where specialized healthcare is limited.</p>
+        </div>
+
+        <!-- Team Section -->
+        <div class="section">
+            <h2>Our Team</h2>
+            <div class="team-members">
+                <div class="member">
+                    <h3>Kuanyshov Bekzat</h3>
+                    <p>Cybersecurity & Web Developer</p>
+                </div>
+                <div class="member">
+                    <h3>Alikhan Temirkhan</h3>
+                    <p>Computer Science Specialist</p>
+                </div>
+                <div class="member">
+                    <h3>Ablay Khamiyev</h3>
+                    <p>Machine Learning Engineer</p>
+                </div>
+            </div>
+            <p>Under the supervision of Anar Rakhimzhanova at Astana IT University, our team combines expertise in cybersecurity and computer science to develop secure, AI-driven healthcare solutions.</p>
+        </div>
+
+        <!-- Technology Section -->
+        <div class="section">
+            <h2>Our Technology</h2>
+            <p>Our platform uses Convolutional Neural Networks (CNNs) to analyze fundus images and identify various eye conditions:</p>
+            <ul class="disease-list">
+                <li>Diabetic Retinopathy</li>
+                <li>Glaucoma</li>
+                <li>Age-related Macular Degeneration (AMD)</li>
+                <li>Cataracts</li>
+                <li>Hypertension-related Eye Conditions</li>
+                <li>Pathological Myopia</li>
+            </ul>
+            <p>We utilize the Ocular Disease Intelligent Recognition (ODIR-5K) dataset, which contains 5,000 patient records, ensuring our model is trained on diverse, real-world data. By applying advanced transfer learning techniques with architectures like VGG19 and ResNet50, we achieve over 90% classification accuracy.</p>
+        </div>
+
+        <!-- How It Works -->
+        <div class="section">
+            <h2>How It Works</h2>
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Upload Image</h3>
+                    <p>Secure upload of fundus images through our web interface</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>AI Analysis</h3>
+                    <p>Deep learning model processes images using CNNs</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Get Results</h3>
+                    <p>Instant diagnostic insights with recommendations</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Choose Us -->
+        <div class="section">
+            <h2>Why Choose Us</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>🌍 Accessibility</h3>
+                    <p>Our solution is designed for individuals in underserved regions, providing early diagnosis without the need for in-person consultations.                    </p>
+                </div>
+                <div class="feature-card">
+                    <h3>🎯 Accuracy</h3>
+                    <p>Leveraging state-of-the-art AI models, our system delivers precise and reliable diagnostic outcomes.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🔒 Security</h3>
+                    <p>We implement rigorous security measures to protect patient data and maintain confidentiality.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🚀 Innovation</h3>
+                    <p>Our chatbot is an evolving platform, continuously improving with new data and advanced AI techniques.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vision Section -->
+        <div class="section">
+            <h2>Our Vision</h2>
+            <p>We envision a future where technology bridges the gap in healthcare accessibility. By integrating AI-driven diagnostics with secure chatbot interfaces, we empower users to take proactive steps toward their eye health. Our platform not only supports patients but also assists healthcare professionals by providing accurate, real-time insights.</p>
+        </div>
+
+        <!-- Data Security Commitment -->
+        <div class="section">
+            <h2>Our Data Security</h2>
+            <p>We recognize the critical importance of safeguarding user information. To maintain the highest standards of data protection, we implement the following measures:</p>
+            
+            <ul class="disease-list">
+                <li class="security-item">
+                    <span class="security-title">Secure Data Storage</span>
+                    <p class="security-desc">Patient information is stored using encrypted databases to ensure data confidentiality.</p>
+                </li>
+                <li class="security-item">
+                    <span class="security-title">Access Control</span>
+                    <p class="security-desc">We enforce strict access control mechanisms to limit data availability to authorized users only.</p>
+                </li>
+                <li class="security-item">
+                    <span class="security-title">Data Anonymization</span>
+                    <p class="security-desc">Personally identifiable information is anonymized during processing to protect user privacy.</p>
+                </li>
+                <li class="security-item">
+                    <span class="security-title">Continuous Monitoring</span>
+                    <p class="security-desc">Our system undergoes continuous security monitoring to detect and respond to potential threats in real time.</p>
+                </li>
+                <li class="security-item">
+                    <span class="security-title">User Authentication System</span>
+                    <p class="security-desc">Includes user registration, login, OTP verification, and secure password recovery through email-based verification.</p>
+                </li>
+            </ul>
+        
+            <div class="security-badge">
+                <h3>Security Certifications</h3>
+                <p>HIPAA • GDPR • ISO 27001 • AES-256</p>
+            </div>
+        </div>        
+
+
+        <!-- Future Goals -->
+        <div class="section">
+            <h2>Future Vision</h2>
+            <div class="features">
+                <div class="feature-card">
+                    <h3>📈 Expanded Diagnostics</h3>
+                    <p>Adding new medical imaging modalities</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🤝 Telemedicine</h3>
+                    <p>Integration with telehealth platforms</p>
+                </div>
+                <div class="feature-card">
+                    <h3>🧠 Enhanced AI</h3>
+                    <p>Improved models with larger datasets</p>
+                </div>
+                <div class="feature-card">
+                    <h3>💻 Better UX</h3>
+                    <p>Improved interface for all users</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Get Involved -->
+        <div class="section">
+            <h2>Get Involved</h2>
+            <p>We welcome collaboration with researchers, healthcare providers, and technology enthusiasts who share our vision for advancing medical diagnostics.</p>
+            <a href="index.html#contact" class="cta-button">Contact Us</a>
+        </div>
+
+    <script>
+        // Scroll animation trigger
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.section').forEach((section) => {
+            observer.observe(section);
+        });
+
+        // Hover animations for interactive elements
+        document.querySelectorAll('.member, .feature-card, .step').forEach(element => {
+            element.addEventListener('mouseover', () => {
+                element.style.transform = element.classList.contains('step') ? 
+                    'scale(1.05)' : 'translateY(-10px)';
+            });
+            element.addEventListener('mouseout', () => {
+                element.style.transform = 'none';
+            });
+        });
+
+        document.querySelector('.cta-button').addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+        
+    </script>
+</body>
+</html>

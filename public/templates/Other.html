@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Other Diseases/Analysis</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #f8f9ff, #f1f4ff);
+            color: #2d3436;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.8rem;
+            background: linear-gradient(45deg, #8e44ad, #732d91);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .feature-block {
+            background: linear-gradient(145deg, #f5eef8, #f0e5f5);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 15px;
+            border-left: 4px solid #8e44ad;
+            transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .feature-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(142, 68, 173, 0.15);
+        }
+
+        h2, h3 {
+            color: #732d91;
+            margin: 25px 0 15px;
+        }
+
+        h3 {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.4rem;
+        }
+
+        h3 i {
+            color: #8e44ad;
+            font-size: 1.6rem;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 30px;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            position: relative;
+        }
+
+        ul li:before {
+            content: '•';
+            color: #8e44ad;
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+
+        .recommendations {
+            background: linear-gradient(145deg, #e8daf0, #e0d0e9);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            border: 2px solid #8e44ad;
+        }
+
+        .recommendations li:before {
+            content: '✔';
+            color: #8e44ad;
+        }
+
+        .highlight {
+            color: #8e44ad;
+            font-weight: 600;
+            position: relative;
+        }
+
+        .highlight:after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: currentColor;
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .highlight:hover:after {
+            transform: scaleX(1);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+
+        .visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="fade-in">Other Diseases/Abnormalities (O) – Detailed Analysis</h1>
+        
+        <p class="fade-in">The "Other diseases/abnormalities" category includes various fundus pathologies that do not fall into the main classifications but can affect vision and overall eye health. These conditions can be congenital, degenerative, inflammatory, or vascular and require further examination and monitoring.</p>
+
+        <h2 class="fade-in">Key Pathologies</h2>
+
+        <div class="feature-block fade-in">
+            <h3><i class="fas fa-crosshairs"></i> Diabetic Retinopathy</h3>
+            <ul>
+                <li>Associated with retinal vascular damage in diabetic patients.
+                </li>
+                <li>In fundus analysis, it manifests as microaneurysms, hemorrhages, exudates, and macular edema.
+                </li>
+                <li>In severe cases, neovascularization (formation of new blood vessels) may develop, leading to hemorrhages and retinal detachment.
+                </li>
+            </ul>
+        </div>
+
+        <div class="feature-block fade-in">
+            <h3><i class="fas fa-tint"></i> Central Serous Chorioretinopathy</h3>
+            <ul>
+                <li>Caused by fluid leakage from the choroid into the subretinal space, leading to retinal swelling.
+                </li>
+                <li>In fundus analysis, it appears as localized swelling zones in the macular area.
+                </li>
+                <li>More common in young individuals with high stress levels.
+                </li>
+            </ul>
+        </div>
+
+        <div class="feature-block fade-in">
+            <h3><i class="fas fa-fire"></i> Inflammatory Diseases</h3>
+            <ul>
+                <li>Uveitis – Inflammation of the uveal tract (anterior, intermediate, or posterior).
+                </li>
+                <li>Retinitis – Retinal inflammation, often caused by viral or bacterial infections (herpes, toxoplasmosis).
+                </li>
+                <li>Choroiditis – Inflammation of the choroid, seen as diffuse, yellowish spots in fundus analysis.
+                </li>
+            </ul>
+        </div>
+
+        <div class="feature-block fade-in">
+            <h3><i class="fas fa-dna"></i> Hereditary Dystrophies</h3>
+            <ul>
+                <li>Retinitis Pigmentosa – A progressive disease leading to photoreceptor loss, characterized by pigment deposits.
+                </li>
+                <li>Stargardt Disease – A macular dystrophy in young individuals caused by ABCA4 gene mutations.
+                </li>
+                <li>Best Disease – A hereditary macular dystrophy, presenting as an "egg yolk" appearance in the macular zone.
+                </li>
+            </ul>
+        </div>
+
+        <div class="feature-block fade-in">
+            <h3><i class="fas fa-brain"></i> Optic Neuropathy</h3>
+            <ul>
+                <li>Optic Nerve Atrophy – Degenerative changes leading to vision loss.
+                    (pale disc)</li>
+                <li>Ischemic Neuropathy – Sudden optic nerve blood supply impairment, linked to hypertension or vascular diseases.</li>
+            </ul>
+        </div>
+
+        <div class="feature-block fade-in">
+            <h3><i class="fas fa-microscope"></i> Fundus Tumors</h3>
+            <ul>
+                <li>Choroidal Melanoma – A malignant tumor, more common in adults, appearing as a dark elevated lesion.
+                </li>
+                <li>Retinoblastoma – A rare malignant tumor in children, presenting as a white pupil reflex and abnormal retinal changes.
+                </li>
+            </ul>
+        </div>
+
+        <h2 class="fade-in">Analysis Results</h2>
+        <ul class="fade-in">
+            <li>Depending on the pathology, fundus images may show <span class="highlight">vascular abnormalities, edema, inflammation, neoplasms, and degenerative processes.</span></li>
+            <li>Some diseases require additional diagnostic tests <span class="highlight">OCT, angiography, MRI</span>< for confirmation.</li>
+            <li>If abnormalities are detected, immediate consultation with an ophthalmologist is recommended for diagnosis and treatment planning.
+            </li>
+        </ul>
+
+        <h2 class="fade-in">Result Interpretation</h2>
+        <p class="fade-in">If your analysis falls under this category, it means that pathological changes were detected that do not belong to the primary disease groups (diabetes, glaucoma, cataract, etc.). Further examination is essential to determine the exact diagnosis and treatment strategy.</p>
+
+        <div class="recommendations fade-in">
+            <h3><i class="fas fa-clipboard-list"></i> Recommendations:</h3>
+            <ul>
+                <li>Consult an ophthalmologist for further evaluation and an accurate diagnosis.</li>
+                <li>If necessary, undergo additional tests such as optical coherence tomography (OCT), angiography, or ocular ultrasound (US).</li>
+                <li>Monitor blood pressure, blood sugar levels, and overall health, as many eye diseases are linked to systemic conditions.</li>
+                <li>In cases of tumors or severe degenerative diseases, specialized treatment may be required (laser therapy, surgery, anti-VEGF injections).</li>
+                <li>Track disease progression through regular check-ups to prevent complications.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if(entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+</body>
+</html>

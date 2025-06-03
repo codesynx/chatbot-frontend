@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundus Analysis - Normal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f1f4ff 100%);
+            color: #2d3436;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.8rem;
+            position: relative;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #3498db;
+            margin: 40px 0 25px;
+            font-size: 2rem;
+            padding-left: 20px;
+            border-left: 4px solid #3498db;
+        }
+
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .feature-block {
+            background: linear-gradient(145deg, #ffffff, #f8faff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 15px;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+            position: relative;
+        }
+
+        .feature-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.15);
+        }
+
+        .feature-block h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-block h3 i {
+            color: #3498db;
+            font-size: 1.6rem;
+        }
+
+        .recommendations {
+            background: linear-gradient(145deg, #e8f5e9, #d4ede6);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            border: 2px solid #4CAF50;
+        }
+
+        .recommendations h3 {
+            color: #2e7d32;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 30px;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        ul li:before {
+            content: '✓';
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="fade-in">Pathological Myopia (M)</h1>
+        
+        <p class="fade-in">Pathological myopia is a severe form of nearsightedness (more than -6 diopters), where the eyeball becomes excessively elongated, leading to degenerative changes in the retina and choroid. This condition can progress over time and increases the risk of serious complications such as retinal detachment, tears, and hemorrhages.</p>
+
+        <h2 class="fade-in">Key Signs of Pathological Myopia</h2>
+
+        <div class="feature-block fade-in myopia">
+            <h3><i class="fas fa-expand-arrows-alt"></i> Eyeball Elongation</h3>
+            <p>- As the eye stretches, the retina becomes thinner and the blood vessels weaker.
+                <br>
+            - In fundus analysis, this is visible as an increase in the optic disc size and changes in the shape of blood vessels.</p>
+        </div>
+
+        <div class="feature-block fade-in myopia">
+            <h3><i class="fas fa-layer-group"></i> Chorioretinal Atrophy</h3>
+            <p>- Gradual destruction of the pigment epithelium and blood vessels leads to pale, thinned areas in the retina.<br>
+            - In fundus analysis, this appears as discolored spots or areas with low pigmentation.</p>
+        </div>
+
+        <div class="feature-block fade-in myopia">
+            <h3><i class="fas fa-dot-circle"></i> Myopic Cones</h3>
+            <p>- Around the optic disc, a whitish ring (myopic cone) may appear, indicating retinal thinning.<br>
+            - In severe cases, a staphyloma (protrusion of the posterior wall of the eye) may form, visible as a deep indentation in the fundus.</p>
+        </div>
+
+        <div class="feature-block fade-in myopia">
+            <h3><i class="fas fa-exclamation-triangle"></i> Retinal Risks</h3>
+            <p>- Due to retinal thinning, the likelihood of retinal tears and detachment increases.<br>
+            - Fundus analysis may show tears or weakened areas of the retina, especially in the periphery.
+        </p>
+        </div>
+
+        <h2 class="fade-in">Analysis Results</h2>
+        <ul class="fade-in">
+            <li>Fundus images show retinal thinning, myopic cones, chorioretinal atrophy, and vascular changes.</li>
+            <li>Patients with high myopia are at increased risk for macular tears, hemorrhages, and retinal detachment.</li>
+            <li>Myopic degeneration is more common in those with a hereditary predisposition and tends to progress over time.</li>
+        </ul>
+
+        <h2 class="fade-in">What Does This Result Mean?</h2>
+        <p class="fade-in">If your analysis shows pathological myopia, it means you have degenerative changes in the retina caused by excessive elongation of the eyeball. This condition requires regular monitoring, as it significantly increases the risk of serious complications.</p>
+
+        <div class="recommendations myopia fade-in">
+            <h3><i class="fas fa-low-vision"></i> Recommendations:</h3>
+            <ul>
+                <li>Regular ophthalmological check-ups, especially if your myopia exceeds -6 diopters.</li>
+                <li>Avoid excessive physical activity, sudden bending, and lifting heavy objects to prevent retinal tears.                </li>
+                <li>Use protective glasses when working on the computer to reduce eye strain.</li>
+                <li>Monitor your diet, including foods rich in lutein, vitamin A, and antioxidants.</li>
+                <li>If degenerative changes are present, retinal laser coagulation may be required to prevent detachment.</li>
+                <li>In cases of severe chorioretinal atrophy or macular tears, vitreoretinal surgery may be necessary.</li>
+            </ul>
+        </div>
+    </div>
+    <style>
+        /* Специфические стили для миопии */
+        .myopia { border-color: #27ae60 !important; }
+        .myopia h3 { color: #219150 !important; }
+        .myopia li:before { color: #27ae60 !important; }
+        .feature-block.myopia { 
+            background: linear-gradient(145deg, #e8f5e9, #e0f2e1); 
+            border-left: 4px solid #27ae60;
+        }
+        .feature-block.myopia:hover { box-shadow: 0 15px 30px rgba(39,174,96,0.15); }
+        .recommendations.myopia { 
+            background: linear-gradient(145deg, #d4efdf, #c8e6d1); 
+            border: 2px solid #27ae60;
+        }
+        .highlight { 
+            background-image: linear-gradient(120deg, #a9dfbf 0%, #a9dfbf 100%);
+            background-repeat: no-repeat;
+            background-size: 100% 40%;
+            background-position: 0 90%;
+        }
+    </style>
+    
+    <script>
+        // Анимация при скролле (остается без изменений)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1 });
+    
+        document.querySelectorAll('.fade-in').forEach(element => {
+            observer.observe(element);
+        });
+    </script>
+
+</body>
+</html>

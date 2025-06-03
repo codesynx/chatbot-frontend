@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundus Analysis - Normal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.7;
+            background: linear-gradient(135deg, #f8f9ff 0%, #f1f4ff 100%);
+            color: #2d3436;
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            backdrop-filter: blur(10px);
+            position: relative;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 2.8rem;
+            position: relative;
+            background: linear-gradient(45deg, #2c3e50, #3498db);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+
+        h2 {
+            color: #3498db;
+            margin: 40px 0 25px;
+            font-size: 2rem;
+            padding-left: 20px;
+            border-left: 4px solid #3498db;
+        }
+
+        p {
+            margin-bottom: 25px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+
+        .feature-block {
+            background: linear-gradient(145deg, #ffffff, #f8faff);
+            padding: 30px;
+            margin: 25px 0;
+            border-radius: 15px;
+            transition: all 0.4s ease-in-out;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid rgba(52, 152, 219, 0.1);
+            position: relative;
+        }
+
+        .feature-block:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(52, 152, 219, 0.15);
+        }
+
+        .feature-block h3 {
+            color: #2c3e50;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-block h3 i {
+            color: #3498db;
+            font-size: 1.6rem;
+        }
+
+        .recommendations {
+            background: linear-gradient(145deg, #e8f5e9, #d4ede6);
+            padding: 30px;
+            border-radius: 15px;
+            margin-top: 40px;
+            border: 2px solid #4CAF50;
+        }
+
+        .recommendations h3 {
+            color: #2e7d32;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding-left: 30px;
+        }
+
+        ul li {
+            margin-bottom: 15px;
+            padding-left: 35px;
+            font-size: 1.1rem;
+            position: relative;
+        }
+
+        ul li:before {
+            content: '✓';
+            color: #3498db;
+            position: absolute;
+            left: 0;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 30px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="fade-in">Diabetes (D)</h1>
+        
+        <p class="fade-in">Our fundus analysis service helps detect signs of diabetic retinopathy (DR), a serious complication of diabetes that affects the retina due to damage to small blood vessels.</p>
+    
+        <h2 class="fade-in">Key Signs of Diabetic Retinopathy</h2>
+    
+        <div class="feature-block fade-in danger">
+            <h3><i class="fas fa-circle-notch"></i> Microaneurysms</h3>
+            <p>- Early signs of DR include small dilated blood vessels (aneurysms) in the retina.<br>
+            - They appear as tiny red dots and may rupture, causing hemorrhages.</p>
+        </div>
+    
+        <div class="feature-block fade-in danger">
+            <h3><i class="fas fa-tint"></i> Hemorrhages</h3>
+            <p>- Small dot or blot hemorrhages can appear in different layers of the retina.<br>
+            - Larger hemorrhages may occur in the vitreous body, leading to sudden vision loss.</p>
+        </div>
+    
+        <div class="feature-block fade-in danger">
+            <h3><i class="fas fa-eye-dropper"></i> Macular Edema</h3>
+            <p>- Fluid accumulation in the central part of the retina (macula), leading to impaired central vision.<br>
+            - One of the primary causes of vision loss in diabetes.</p>
+        </div>
+    
+        <div class="feature-block fade-in danger">
+            <h3><i class="fas fa-sitemap"></i> Neovascularization</h3>
+            <p>- The body attempts to compensate for oxygen deficiency by creating new abnormal blood vessels.<br>
+            - These vessels are fragile and can rupture, causing severe complications.</p>
+        </div>
+    
+        <div class="feature-block fade-in danger">
+            <h3><i class="fas fa-sun"></i> Hard Exudates</h3>
+            <p>- Bright spots on the retina caused by leakage of lipids and proteins.<br>
+            - They can impair vision if located in the central area.</p>
+        </div>
+    
+        <h2 class="fade-in">Analysis Results</h2>
+        <ul class="fade-in">
+            <li>Patients are most commonly in the age range of <span class="highlight">35 to 70 years</span></li>
+            <li>Images show noticeable <span class="highlight">vascular changes and hemorrhages</span></li>
+            <li>Categorized into non-proliferative, proliferative, and macular edema stages</li>
+        </ul>
+    
+        <h2 class="fade-in">What Does a "Diabetes" Result Mean?</h2>
+        <p class="fade-in">If your analysis result indicates signs of diabetes, it means that retinal changes characteristic of diabetic retinopathy have been detected. This could suggest an early or progressing stage of the disease.</p>
+    
+        <div class="recommendations danger fade-in">
+            <h3><i class="fas fa-exclamation-triangle"></i> Recommendations:</h3>
+            <ul>
+                <li>Regularly monitor blood sugar levels</li>
+                <li>Annual ophthalmologist checkups</li>
+                <li>Possible laser treatment or injections</li>
+                <li>Control blood pressure and cholesterol</li>
+            </ul>
+        </div>
+    </div>
+    
+    <style>
+        /* Добавляем специфические стили для диабетической ретинопатии */
+        .danger {
+            border-color: #e74c3c !important;
+        }
+    
+        .danger h3 {
+            color: #c0392b !important;
+        }
+    
+        .danger li:before {
+            color: #e74c3c !important;
+        }
+    
+        .feature-block.danger {
+            background: linear-gradient(145deg, #fff5f5, #ffecec);
+            border-left: 4px solid #e74c3c;
+        }
+    
+        .feature-block.danger:hover {
+            box-shadow: 0 15px 30px rgba(231, 76, 60, 0.15);
+        }
+    
+        .recommendations.danger {
+            background: linear-gradient(145deg, #fee, #fdd);
+            border-color: #e74c3c;
+        }
+    
+        .recommendations.danger h3 {
+            color: #e74c3c !important;
+        }
+    </style>
+
+</body>
+</html>
