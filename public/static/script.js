@@ -129,7 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     async function isUserLoggedIn() {
         try {
-            const response = await fetch('http://localhost:5000/api/auth/check-auth', {
+            const response = await fetch('https://chatbot-kz-ce86dc191511.herokuapp.com/api/auth/check-auth', {
                 credentials: 'include'
             });
             const data = await response.json();
@@ -173,7 +173,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 logoutButton.addEventListener('click', async (e) => {
                     e.preventDefault();
                     try {
-                        const response = await fetch('http://localhost:5000/api/auth/logout', {
+                        const response = await fetch('https://chatbot-kz-ce86dc191511.herokuapp.com/api/auth/logout', {
                             method: 'POST',
                             credentials: 'include'
                         });
@@ -322,51 +322,58 @@ async function sendPhoto() {
     chatBox.appendChild(userMessage);
     chatBox.scrollTop = chatBox.scrollHeight;
 
-    try {
-        const response = await fetch("http://localhost:8000/predict/", {
-            method: "POST",
-            body: formData
-        });
+    // Temporarily disable predict functionality
+    const botMessage = document.createElement("div");
+    botMessage.className = "bot-message message";
+    botMessage.textContent = "Image analysis feature is temporarily unavailable. ";
+    chatBox.appendChild(botMessage);
+    chatBox.scrollTop = chatBox.scrollHeight;
 
-        if (!response.ok) throw new Error("Server error!");
+    // try {
+    //     const response = await fetch("http://localhost:8000/predict/", {
+    //         method: "POST",
+    //         body: formData
+    //     });
 
-        const data = await response.json();
+    //     if (!response.ok) throw new Error("Server error!");
 
-        let riskIcon = "";
-        switch (data.risk_level) {
-            case "Normal":
-                riskIcon = "❇️";
-                break;
-            case "High Risk":
-                riskIcon = "🔴";
-                break;
-            case "Moderate Risk":
-                riskIcon = "🟠";
-                break;
-            case "Low Risk":
-                riskIcon = "🟢";
-                break;
-            default:
-                riskIcon = "⚠️";
-        }
+    //     const data = await response.json();
 
-        const botMessage = document.createElement("div");
-        botMessage.className = "bot-message message";
-        botMessage.innerHTML = `
-            <strong>📋 Diagnostic Report</strong> <br>
-            <strong>🩺 Condition Name:</strong> ${data.detected} <br>
-            <strong>📊 Probability:</strong> ${data.confidence}% <br>
-            <strong>${riskIcon} Risk Level:</strong> ${data.risk_level} <br> <br>
-            <pre style="white-space: pre-wrap; word-wrap: break-word;">${data.recommendation}</pre>
-        `;
-        chatBox.appendChild(botMessage);
-        chatBox.scrollTop = chatBox.scrollHeight;
-    } catch (error) {
-        const errorMessage = document.createElement("div");
-        errorMessage.className = "bot-message message";
-        errorMessage.textContent = "Error in analyzing the image 😔";
-        chatBox.appendChild(errorMessage);
-    }
+    //     let riskIcon = "";
+    //     switch (data.risk_level) {
+    //         case "Normal":
+    //             riskIcon = "❇️";
+    //             break;
+    //         case "High Risk":
+    //             riskIcon = "🔴";
+    //             break;
+    //         case "Moderate Risk":
+    //             riskIcon = "🟠";
+    //             break;
+    //         case "Low Risk":
+    //             riskIcon = "🟢";
+    //             break;
+    //         default:
+    //             riskIcon = "⚠️";
+    //     }
+
+    //     const botMessageContent = document.createElement("div");
+    //     botMessageContent.className = "bot-message message";
+    //     botMessageContent.innerHTML = `
+    //         <strong>📋 Diagnostic Report</strong> <br>
+    //         <strong>🩺 Condition Name:</strong> ${data.detected} <br>
+    //         <strong>📊 Probability:</strong> ${data.confidence}% <br>
+    //         <strong>${riskIcon} Risk Level:</strong> ${data.risk_level} <br> <br>
+    //         <pre style="white-space: pre-wrap; word-wrap: break-word;">${data.recommendation}</pre>
+    //     `;
+    //     chatBox.appendChild(botMessageContent);
+    //     chatBox.scrollTop = chatBox.scrollHeight;
+    // } catch (error) {
+    //     const errorMessage = document.createElement("div");
+    //     errorMessage.className = "bot-message message";
+    //     errorMessage.textContent = "Error in analyzing the image 😔";
+    //     chatBox.appendChild(errorMessage);
+    // }
 }
 
 function clearChat() {
@@ -404,6 +411,3 @@ faqItems.forEach((item, index) => {
     item.style.animation = `fadeIn 0.5s ease forwards ${index * 0.2}s`;
     item.style.opacity = 0;
 });
-
-
-
